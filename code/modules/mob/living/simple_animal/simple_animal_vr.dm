@@ -205,3 +205,10 @@
 
 	if(a_intent == I_GRAB && isliving(A) && !has_hands)
 		animal_nom(A)
+
+/mob/living/simple_animal/hostile/special_target_check(var/atom/A)
+	if(ishuman(A))
+		var/mob/living/carbon/human/H = A
+		if(H.species.mobwhisperer == TRUE && prob(80))
+			return FALSE
+	return ..()

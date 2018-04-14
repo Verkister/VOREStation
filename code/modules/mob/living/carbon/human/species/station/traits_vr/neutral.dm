@@ -2,22 +2,27 @@
 	name = "Fast Metabolism"
 	desc = "You process ingested and injected reagents faster, but get hungry faster."
 	cost = 0
-	var_changes = list("metabolic_rate" = 1.2, "hunger_factor" = 0.2, "metabolism" = 0.005) //Teshari level
+	var_changes = list("metabolic_rate" = 1.5, "hunger_factor" = 0.2, "metabolism" = 0.006) // 50% reagent speed and teshari hunger.
 	excludes = list(/datum/trait/metabolism_down, /datum/trait/metabolism_apex)
 
 /datum/trait/metabolism_down
 	name = "Slow Metabolism"
 	desc = "You process ingested and injected reagents slower, but get hungry slower."
 	cost = 0
-	var_changes = list("metabolic_rate" = 0.8, "hunger_factor" = 0.04, "metabolism" = 0.001)
+	var_changes = list("metabolic_rate" = 0.8, "hunger_factor" = 0.04, "metabolism" = 0.0012) // -20% of default.
 	excludes = list(/datum/trait/metabolism_up, /datum/trait/metabolism_apex)
 
 /datum/trait/metabolism_apex
 	name = "Apex Metabolism"
 	desc = "Finally a proper excuse for your predatory actions. Also makes you process reagents faster but that's totally irrelevant. May cause excessive immersions with large/taur characters. Not recommended for efficient law-abiding workers or eco-aware NIF users."
 	cost = 0
-	var_changes = list("metabolic_rate" = 1.5, "hunger_factor" = 0.3, "metabolism" = 0.0075)
+	var_changes = list("metabolic_rate" = 2, "hunger_factor" = 0.4, "metabolism" = 0.012) // Double reagent speed and double teshari hunger.
 	excludes = list(/datum/trait/metabolism_up, /datum/trait/metabolism_down)
+
+/*Default metabolism values:
+	metabolic_rate=1	Affects reagents processing.
+	hunger_factor=0.05	Affects passive and movement based hunger drain.
+	metabolism=0.0015	Affects weight gain/loss.*/
 
 /datum/trait/cold_discomfort
 	name = "Hot-Blooded"
