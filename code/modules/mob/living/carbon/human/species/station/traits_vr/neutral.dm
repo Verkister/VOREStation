@@ -2,7 +2,7 @@
 	name = "Fast Metabolism"
 	desc = "You process ingested and injected reagents faster, but get hungry faster."
 	cost = 0
-	var_changes = list("metabolic_rate" = 1.5, "hunger_factor" = 0.2, "metabolism" = 0.006) // 50% reagent speed and teshari hunger.
+	var_changes = list("metabolic_rate" = 1.5, "hunger_factor" = 0.2, "metabolism" = 0.006) // +50% reagent speed and teshari hunger.
 	excludes = list(/datum/trait/metabolism_down, /datum/trait/metabolism_apex)
 
 /datum/trait/metabolism_down

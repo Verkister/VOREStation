@@ -6,7 +6,6 @@
 	var/lightweight = 0 //Oof! Nonhelpful bump stumbles.
 	var/trashcan = 0 //It's always sunny in the wrestling ring.
 	var/agile = FALSE
-	var/mobwhisperer = FALSE
 
 /datum/species/custom
 	name = "Custom Species"

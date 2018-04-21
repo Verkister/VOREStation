@@ -115,9 +115,3 @@
 	desc = "Lets you climb over things faster."
 	cost = 1
 	var_changes = list("agile" = TRUE)
-
-/datum/trait/whisperer
-	name = "Mob Whisperer"
-	desc = "Hostile mobs have a chance to ignore your peaceful approaches for a while."
-	cost = 2
-	var_changes = list("mobwhisperer" = TRUE)
