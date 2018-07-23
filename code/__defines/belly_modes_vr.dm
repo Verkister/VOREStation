@@ -27,6 +27,7 @@
 #define DM_TRANSFORM_KEEP_GENDER_EGG				"Transform (Keep Gender) (EGG)"
 #define DM_TRANSFORM_MALE_EGG						"Transform (Male) (EGG)"
 #define DM_TRANSFORM_FEMALE_EGG						"Transform (Female) (EGG)"
+#define DM_FUSION									"Fuse with absorbed prey"
 
 //Addon mode flags
 #define DM_FLAG_NUMBING		0x1

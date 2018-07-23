@@ -166,6 +166,8 @@
 
 //////////////////////////// DM_UNABSORB ////////////////////////////
 	else if(digest_mode == DM_UNABSORB)
+		if(istype(owner,/mob/living/carbon/human/fusion))
+			return
 
 		for (var/target in touchable_mobs)
 			var/mob/living/M = target

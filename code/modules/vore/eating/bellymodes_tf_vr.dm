@@ -235,3 +235,31 @@
 
 			put_in_egg(P,1)
 
+///////////////////////////// DM_FUSION /////////////////////////////
+	else if(mode == DM_FUSION)
+		if(!ishuman(owner))
+			return
+		if(!owner.mind)
+			return
+		for(var/mob/living/carbon/human/P in touchable_mobs)
+			if(ishuman(P) && P.absorbed)
+				var/mob/living/carbon/human/fusion/F = new /mob/living/carbon/human/fusion(owner.loc, SPECIES_FUSION, owner, P)
+				if(F)
+					var/datum/mind/user_mind = owner.mind
+					owner.ghostize()
+					user_mind.active = TRUE
+					user_mind.transfer_to(F)
+					F.ooc_notes = owner.ooc_notes
+					F.init_vore()
+					var/obj/belly/belly = F.vore_selected
+					belly.nom_mob(owner, F)
+					belly.nom_mob(P, F)
+					belly.absorb_living(owner)
+					belly.absorb_living(P)
+					for(var/slot in slots)
+						var/obj/item/I = owner.get_equipped_item(slot = slot)
+						if(I)
+							owner.unEquip(I,force = TRUE)
+							I.forceMove(F)
+							F.equip_to_slot(I, slot)
+				break
